@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./index.css" rel="stylesheet"/>
+  <title>Single Layer Perceptron Visualization</title>
+</head>
+<body>
+  <header>
+    <h1>Single Layer Perceptron (SLP) - Concept & Error Visualization</h1>
+  </header>
+
+  <section class="intro">
+    <h2>Sample Data (with noise) & True Equation</h2>
+    <p>True model: <strong>y = 2x + 1</strong></p>
+    <table class="sample-data">
+      <thead>
+        <tr><th>x</th><th>y (with noise)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>-1.0</td><td>-0.99</td></tr>
+        <tr><td>0.0</td><td>1.01</td></tr>
+        <tr><td>1.5</td><td>4.03</td></tr>
+        <tr><td>2.0</td><td>5.00</td></tr>
+        <tr><td>-0.7</td><td>-0.39</td></tr>
+      </tbody>
+    </table>
+  </section>
+  
+  <div class="diagram-container">
+     <div class="diagram">
+    <div class="circle">x₁</div>
+    <div class="arrow">→</div>
+    <div class="box">w₁x₁ + b</div>
+    <div class="arrow">→</div>
+    <div class="circle">y</div>
+  </div>
+  </div>
+    
+    
+
+  <h3>Mean Squared Error (MSE) Equations</h3>
+  <div class="equations">
+    <p class="math">J(yᵖ) = error = (1/N) ∑ (yᵢ - yᵖᵢ)²</p>
+    <p class="math">J(w₁, b) = (1/N) ∑ (yᵢ - w₁xᵢ - b)²</p>
+    <p class="math">
+  J(w₁, b) = (1/5) × [ (0.99 − w₁(−1) − b)² + (1.01 − w₁(0) − b)² + (4.03 − w₁(1.5) − b)² + (5 − w₁(2) − b)² + (−0.39 − w₁(−0.7) − b)² ]
+</p>
+
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>SLP Input-Output Mapping Equation</h2>
+      <div class="iframe-container">
+        <iframe src="https://www.geogebra.org/calculator/hyhjrmx9?embed" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Mean Squared Error with Sample Data</h2>
+      <div class="iframe-container">
+        <iframe src="https://www.geogebra.org/calculator/dfb84kvt?embed" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Designed for educational visualization of SLP architecture using GeoGebra graphs.
+  </footer>
+</body>
+</html>
