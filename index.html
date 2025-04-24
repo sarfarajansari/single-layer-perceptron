@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="./index.css" rel="stylesheet"/>
+  <link href="./index.css" rel="stylesheet" />
   <title>Single Layer Perceptron Visualization</title>
 </head>
 <body>
   <header>
-    <h1>Single Layer Perceptron (SLP) - Concept & Error Visualization</h1>
+    <h1>Visualizing the Learning Process of a Single Layer Perceptron</h1>
+    <p class="subtitle">Explore how neural networks minimize error to learn accurate models</p>
   </header>
 
   <section class="intro">
-    <h2>Sample Data (with noise) & True Equation</h2>
-    <p>True model: <strong>y = 2x + 1</strong></p>
+    <h2>Input Data & True Relationship</h2>
+    <p>The actual function that generates the data is <strong>y = 2x + 1</strong>. But to simulate real-world scenarios, we add some noise to the output values.</p>
     <table class="sample-data">
       <thead>
         <tr><th>x</th><th>y (with noise)</th></tr>
@@ -27,64 +28,59 @@
       </tbody>
     </table>
   </section>
-  
-  <div class="comment-box">
-    Let's define a Perceptron model which will try to find the true equation by learning the data 
-</div>
-  
-  <div class="diagram-container">
-     <div class="diagram">
-    <div class="circle">x₁</div>
-    <div class="arrow">→</div>
-    <div class="box">w₁x₁ + b</div>
-    <div class="arrow">→</div>
-    <div class="circle">y</div>
-  </div>
-  </div>
-  
 
+  <div class="comment-box">
+    In this demo, we define a simple Perceptron model that attempts to learn the true equation from the data. The learning process involves minimizing the prediction error.
+  </div>
+
+  <div class="diagram-container">
+    <div class="diagram">
+      <div class="circle">x₁</div>
+      <div class="arrow">→</div>
+      <div class="box">w₁x₁ + b</div>
+      <div class="arrow">→</div>
+      <div class="circle">y</div>
+    </div>
+  </div>
 
   <h3>Prediction Equation</h3>
   <div class="equations">
-    <p class="math">yᵖ= w₁x1 + b</p>
-  
-      </div>
-      <div class="comment-box">
- The main goal of the model is to find out optimal value of weight and bias which satisfies the data. Now we can define an error equation using mean squared error as a function of weight and bias. If we minimize the error, i.e if we find the minima of the error equation, we will get and optimal value of weight and bias
-</div>
+    <p class="math">yᵖ = w₁x₁ + b</p>
+  </div>
 
-  <h3>Mean Squared Error (MSE) Equations</h3>
+  <div class="comment-box">
+    Our goal is to find optimal values of <strong>w₁</strong> (weight) and <strong>b</strong> (bias) such that the model's predictions align with actual data. To do this, we define a loss function and minimize it.
+  </div>
+
+  <h3>Error Function: Mean Squared Error (MSE)</h3>
   <div class="equations">
-    <p class="math">J(yᵖ) = error = (1/N) ∑ (yᵢ - yᵖᵢ)²</p>
-    <p class="math">J(w₁, b) = (1/N) ∑ (yᵢ - w₁xᵢ - b)²</p>
+    <p class="math">J(w₁, b) = (1/N) ∑ (yᵢ - (w₁xᵢ + b))²</p>
     <p class="math">
-  J(w₁, b) = (1/5) × [ (0.99 − w₁(−1) − b)² + (1.01 − w₁(0) − b)² + (4.03 − w₁(1.5) − b)² + (5 − w₁(2) − b)² + (−0.39 − w₁(−0.7) − b)² ]
-</p>
-
+      J(w₁, b) = (1/5) × [ (0.99 − w₁(−1) − b)² + (1.01 − w₁(0) − b)² + (4.03 − w₁(1.5) − b)² + (5 − w₁(2) − b)² + (−0.39 − w₁(−0.7) − b)² ]
+    </p>
   </div>
 
   <div class="container">
     <div class="card">
-      <h2>SLP Input-Output Mapping Equation</h2>
+      <h2>Model Equation Visualization</h2>
       <div class="iframe-container">
         <iframe src="https://www.geogebra.org/calculator/hyhjrmx9?embed" allowfullscreen></iframe>
       </div>
     </div>
-
     <div class="card">
-      <h2>Mean Squared Error with Sample Data</h2>
+      <h2>Error Surface Visualization</h2>
       <div class="iframe-container">
         <iframe src="https://www.geogebra.org/calculator/dfb84kvt?embed" allowfullscreen></iframe>
       </div>
     </div>
   </div>
-  
-     <div class="comment-box">
-Let's understand the error curve plotted using Geogebra. The error is plotted as a function of x,y where x is weight and y is bias and z is basically the error. Hence. J= error(x,y) = error(w,b). If we closely look at the curve, the minima lies in (2,1,0) which basically means that the optimal value of weight is 2 and bias is 1. This way neural networks construct the true equation by learning the data.
-</div>
+
+  <div class="comment-box">
+    The surface plotted above shows how error varies with different weights and biases. The lowest point on this surface (minima) gives the optimal values of w₁ and b. For this data, the error is minimized at (w=2, b=1), which closely matches the true equation.
+  </div>
 
   <footer>
-    Designed for educational visualization of SLP architecture using GeoGebra graphs.
+    Designed for intuitive understanding of how a Single Layer Perceptron learns using error minimization.
   </footer>
 </body>
 </html>

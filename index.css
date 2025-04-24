@@ -1,163 +1,132 @@
+/* General resets */
 body {
-  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f4f6f9;
-  color: #333;
-}
-
-header {
-  background-color: #4a90e2;
-  padding: 1rem;
-  text-align: center;
-  color: white;
-  border-bottom: 3px solid #357ABD;
-}
-
-h1 {
+  line-height: 1.6;
   margin: 0;
-  font-size: 2rem;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+
 }
 
-.intro {
-  padding: 2rem;
+h3{
+  padding: 1rem 2rem;
+}
+
+/* Header */
+header {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 1rem 2rem;
   text-align: center;
 }
-
-.intro h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+header h1 {
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
+/* Sections */
+section.intro {
+  padding: 2rem;
+}
+
+/* Tables */
 .sample-data {
-  margin: 0 auto;
-  width: max-content;
   border-collapse: collapse;
-  font-size: 1rem;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  overflow: hidden;
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 400px;
 }
-
 .sample-data th,
 .sample-data td {
-  padding: 0.75rem 1.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: center;
 }
-
 .sample-data th {
-  background-color: #e4e4e4;
+  background-color: #e9ecef;
 }
 
+/* Comment Box */
+.comment-box {
+  background-color: #fff3cd;
+  border-left: 6px solid #ffeeba;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  font-style: italic;
+  border-radius: 4px;
+}
+
+/* Diagram */
+.diagram-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.diagram {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.circle, .box {
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+.box {
+  border-radius: 0.5rem;
+}
+
+/* Equations */
+.equations {
+  padding: 1rem 2rem;
+}
+.math {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #e8f5e9;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border-left: 4px solid #81c784;
+}
+
+/* Cards and Containers */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  justify-content: center;
   padding: 2rem;
 }
-
 .card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h2 {
-  background: #f0f0f0;
-  margin: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 1rem;
-  font-size: 1.25rem;
-  border-bottom: 1px solid #ddd;
+  flex: 1 1 400px;
 }
-
 .iframe-container {
-  width: 100%;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
   height: 600px;
+  overflow: hidden;
 }
-
-iframe {
+.iframe-container iframe {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 0 0 12px 12px;
 }
 
+/* Footer */
 footer {
+  background-color: #264653;
+  color: white;
   text-align: center;
   padding: 1rem;
-  background: #f0f0f0;
-  font-size: 0.9rem;
   margin-top: 2rem;
 }
-
-.diagram-container{
-display:flex;
-justify-content:center;
-} 
-
-.diagram {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-.circle, .box {
-  text-align: center;
-  padding: 20px;
-  margin: 10px;
-  font-weight: bold;
-}
-.circle {
-  border: 2px solid #555;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.box {
-  border: 2px solid #555;
-  width: 100px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.arrow {
-  margin: 0 10px;
-  font-size: 24px;
-}
-.equations {
-  font-size: 18px;
-  background-color: #f0f0f0;
-  padding: 15px;
-  border-left: 4px solid #007BFF;
-}
-.math {
-  font-family: 'Courier New', Courier, monospace;
-}
-.comment-box {
-background-color: #f9f9f9;
-border: 1px solid #ccc;
-padding: 12px;
-font-family: Arial, sans-serif;
-font-size: 14px;
-color: #555;
-border-radius: 5px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-margin: 10px 50px;
-}
-
-
-
-.comment-box:hover {
-background-color: #e9f7fe;
-border-color: #007acc;
-}
-
